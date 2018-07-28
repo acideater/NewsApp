@@ -57,10 +57,10 @@ public final class QueryUtils {
         }
 
         // Extract relevant fields from the JSON response and create a list of {@link News}
-        List<News> articles = extractFeatureFromJson(jsonResponse);
+        List<News> newsArticles = extractFeatureFromJson(jsonResponse);
 
         // Return the list of {@link News}
-        return articles;
+        return newsArticles;
     }
 
     /**
@@ -167,15 +167,16 @@ public final class QueryUtils {
             for (int i = 0; i < newsArray.length(); i++) {
                 JSONObject currentNews = newsArray.getJSONObject(i);
 
-                // Extract the value for the key called "place"
+                // Extract the section
                 String section = currentNews.getString("sectionName");
 
-                // Extract the value for the key called "time"
+                // Extract the publication date
                 String publishedDate = currentNews.getString("webPublicationDate");
 
-                // Extract the value for the key called "place"
+                // Extract the article title
                 String title = currentNews.getString("webTitle");
 
+                // Extract the article author that is inside tag array
                 JSONArray tags = currentNews.getJSONArray("tags");
                 String author = "";
 
@@ -186,8 +187,7 @@ public final class QueryUtils {
                         // Get an author at position x from the list of tags.
                         JSONObject currentAuthor = tags.getJSONObject(x);
 
-                        // Extract the value for the key "webTitle", which represents
-                        // the first and last name of the author.
+                        // Extract the value for the key "webTitle", which represents the author.
                         author = currentAuthor.getString("webTitle");
                     }
                 }
@@ -195,7 +195,7 @@ public final class QueryUtils {
                 // Extract the value for the key called "url"
                 String url = currentNews.getString("webUrl");
 
-                // Create a new {@link News} object with the location, time,
+                // Create a new {@link News} object with the section, date, title, author
                 // and url from the JSON response.
                 News article = new News(section, publishedDate, title, author, url);
                 articles.add(article);
