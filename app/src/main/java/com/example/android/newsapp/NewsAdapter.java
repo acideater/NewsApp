@@ -7,9 +7,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class NewsAdapter extends ArrayAdapter<News> {
+
+    /**
+     * String with split position of Date
+     **/
+    private static final String DATE_SEPARATOR = "T";
+
 
 
     public NewsAdapter(Context context, List<News> articles) {
@@ -41,6 +51,33 @@ public class NewsAdapter extends ArrayAdapter<News> {
         articleText.setText(currentArticle.getTitle());
         articleAuthor.setText(currentArticle.getAuthor());
         articleDate.setText(currentArticle.getPublishedDate());
+
+
+        // Converting data using SimpleDateFormat
+        String originalDate = currentArticle.getPublishedDate();
+        String date = null;
+
+        // Fix split Date
+        if (originalDate.contains(DATE_SEPARATOR)) {
+            String[] parts = originalDate.split(DATE_SEPARATOR);
+            date = parts[0];
+        }
+
+        // Converts to format "MM-dd-yyyy"
+        SimpleDateFormat spf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        Date newDate = null;
+        try {
+            newDate = spf.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        spf = new SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH);
+        date = spf.format(newDate);
+
+        // Sets text of the date articleDate
+        articleDate.setText(date);
+
 
         // Return the list item view that is now showing the appropriate data
         return listItemView;
