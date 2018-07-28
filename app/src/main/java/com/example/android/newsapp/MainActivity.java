@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     /**
      * URL for news data from the The Guardian
      */
-    private static final String USGS_REQUEST_URL =
+    private static final String NEWS_REQUEST_URL =
             "https://content.guardianapis.com/search?order-by=newest&page-size=20" +
             "&tag=world%2Fbrazil&use-date=published&show-tags=contributor&q=brazil" +
             "&api-key=99a52101-d043-48b5-a170-5aec5dae35f2";
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Log.i(LOG_TAG, "TEST: onCreateLoader() called ...");
 
         // Create a new loader for the given URL
-        return new NewsLoader(this, USGS_REQUEST_URL);
+        return new NewsLoader(this, NEWS_REQUEST_URL);
     }
 
     @Override
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         loadingIndicator.setVisibility(View.GONE);
 
         // Set empty state text to display "No articles found."
-        mEmptyStateTextView.setText(R.string.no_earthquakes);
+        mEmptyStateTextView.setText(R.string.no_articles);
 
         // Clear the adapter of previous articles data
         mAdapter.clear();

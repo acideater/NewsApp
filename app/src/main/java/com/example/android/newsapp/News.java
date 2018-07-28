@@ -3,7 +3,6 @@ package com.example.android.newsapp;
 
 public class News {
 
-
     /**
      * Section of the article
      */
@@ -60,18 +59,19 @@ public class News {
         return mPublishedDate;
     }
 
-
     /**
      * Returns the Title of the article
      */
-    public String getTitle() { return mTitle; }
-
+    public String getTitle() {
+        return mTitle;
+    }
 
     /**
      * Returns the Author of the article
      */
-    public String getAuthor() { return mAuthor; }
-
+    public String getAuthor() {
+        return mAuthor;
+    }
 
     /**
      * Returns the website URL of the article.

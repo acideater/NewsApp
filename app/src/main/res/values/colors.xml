@@ -10,6 +10,6 @@
     <!-- Text color for the author name -->
     <color name="textColorAuthor">#B4BAC0</color>
 
-    <!-- Text color for the primary location of the earthquake in the list item -->
+    <!-- Text color for the article title -->
     <color name="textColorTitle">#2B3D4D</color>
 </resources>

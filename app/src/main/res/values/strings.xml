@@ -2,7 +2,7 @@
     <string name="app_name">Brazil News App</string>
 
     <!-- Text to display in the list when there are no news [CHAR LIMIT=NONE] -->
-    <string name="no_earthquakes">No news found.</string>
+    <string name="no_articles">No news found.</string>
 
     <!-- Error message when there is no internet connectivity [CHAR LIMIT=NONE] -->
     <string name="no_internet_connection">No internet connection.</string>
