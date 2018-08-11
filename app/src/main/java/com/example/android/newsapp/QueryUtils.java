@@ -57,10 +57,10 @@ public final class QueryUtils {
         }
 
         // Extract relevant fields from the JSON response and create a list of {@link News}
-        List<News> newsArticles = extractFeatureFromJson(jsonResponse);
+        List<News> articles = extractFeatureFromJson(jsonResponse);
 
         // Return the list of {@link News}
-        return newsArticles;
+        return articles;
     }
 
     /**

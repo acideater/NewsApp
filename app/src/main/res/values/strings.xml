@@ -8,5 +8,30 @@
     <string name="no_internet_connection">No internet connection.</string>
 
     <string name="settings_menu_item">Settings</string>
+    <string name="refresh_menu_item">Refresh</string>
     <string name="settings_title">Brazil News Settings</string>
+
+    <!-- Params -->
+    <string name="keyword_title">Specific keyword</string>
+    <string name="keyword_key" translatable="false">keyword</string>
+    <string name="keyword_default" translatable="false"></string>
+
+    <string name="order_by_title">Order by</string>
+    <string name="order_by_key" translatable="false">order_by</string>
+    <string name="order_by_default" translatable="false"></string>
+
+    <string name="order_by_newest_title">Newest articles</string>
+    <string name="order_by_newest_value" translatable="false">newest</string>
+
+    <string name="order_by_oldest_title">Oldest articles</string>
+    <string name="order_by_oldest_value" translatable="false">oldest</string>
+
+    <string name="order_by_relevance_title">Relevance based on keyword</string>
+    <string name="order_by_relevance_value" translatable="false">relevance</string>
+
+    <string name="page_size_title">Number of articles shown</string>
+    <string name="page_size_key" translatable="false">page_size</string>
+    <string name="page_size_default" translatable="false">20</string>
+
+
 </resources>
