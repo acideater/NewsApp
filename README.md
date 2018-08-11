@@ -16,5 +16,11 @@ To extract the news, <a href="http://open-platform.theguardian.com/documentation
 * Using an AsyncTask
 * Doing network operations independent of the Activity lifecycle
 
+### Updated:
+* Implement the Preference Fragment
+* Launch a Settings Activity from a menu in the Main Activity
+* Use Uri.Builder class to add query parameters to the URL
+* Update and display the Preference Summary
+
 ### Additional Criteria
 The intent of this project is to practice writing raw Java code using the necessary classes provided by the Android framework; therefore, the use of external libraries is not be permitted.
